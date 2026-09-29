@@ -385,6 +385,25 @@ conda activate embench
 python -m embodiedbench.main env=eb-hab model_name=gpt-4o-mini exp_name='baseline'
 ```
 
+#### EmbodiedMemory-Bench
+
+- **Paper**: [arXiv:2609.28236](https://arxiv.org/abs/2609.28236) (arXiv preprint, 2026)
+- **GitHub**: [ZJU-OmniAI/Embodied-Omni — embodied_memory](https://github.com/ZJU-OmniAI/Embodied-Omni/tree/main/embodied_memory)
+- **HuggingFace**: [lzLiang/EmbodiedMemoryBench](https://huggingface.co/datasets/lzLiang/EmbodiedMemoryBench)
+- **Project**: [EmbodiedMemoryBench](https://zju-omniai.github.io/Embodied-Omni/EmbodiedMemoryBench/)
+
+**Description**: Evaluates how agents build and update memory from observation and interaction history, then use it for later embodied actions across 2,554 episodes and four task families.
+
+**Category**: Visual Perception, Spatial Awareness, Temporal & Causal Understanding, Long-horizon Planning; with visual recall, dynamic tracking, interaction-outcome memory, and experience generalization.
+
+**Simulator**: AI2-THOR (simulation).
+
+**Evaluation Metrics**: Success rate and memory-augmented efficiency (MAE).
+
+**Usage**: Install the official package, prepare the released dataset and manifest, and configure an OpenAI-compatible inference endpoint. Start with `emem-bench evaluate --mode emem --model MODEL_ALIAS --base-url http://localhost:8000/v1 --data-root /path/to/data --manifest /path/to/data/manifests/full2554.jsonl --per-family 1 --output outputs/emem-smoke`.
+
+**License**: Code: Apache-2.0 (benchmark subdirectory); dataset: CC BY-NC 4.0. Simulator assets retain their upstream terms.
+
 ## Capability Taxonomy
 
 Based on [Embodied Arena](https://arxiv.org/abs/2509.15273), embodied capabilities are categorized into 7 core capabilities with 25 fine-grained dimensions:

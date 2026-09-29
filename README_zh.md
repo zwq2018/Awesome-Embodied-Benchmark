@@ -385,6 +385,25 @@ conda activate embench
 python -m embodiedbench.main env=eb-hab model_name=gpt-4o-mini exp_name='baseline'
 ```
 
+#### EmbodiedMemory-Bench
+
+- **论文**: [arXiv:2609.28236](https://arxiv.org/abs/2609.28236)（2026 年 arXiv 预印本）
+- **GitHub**: [ZJU-OmniAI/Embodied-Omni — embodied_memory](https://github.com/ZJU-OmniAI/Embodied-Omni/tree/main/embodied_memory)
+- **HuggingFace**: [lzLiang/EmbodiedMemoryBench](https://huggingface.co/datasets/lzLiang/EmbodiedMemoryBench)
+- **项目主页**: [EmbodiedMemoryBench](https://zju-omniai.github.io/Embodied-Omni/EmbodiedMemoryBench/)
+
+**描述**: 在 2,554 个回合、四类任务中，评测智能体从观测与交互历史中建立、更新记忆，并将记忆用于后续具身行动的能力。
+
+**能力类别**: 视觉感知、空间感知、时间与因果理解、长程规划；具体覆盖视觉细节记忆、动态状态追踪、交互结果记忆与经验泛化。
+
+**仿真器**: AI2-THOR（仿真评测）。
+
+**评估指标**: 成功率、记忆增强交互效率（MAE）。
+
+**使用方法**: 安装官方包，准备公开数据及 manifest，并配置兼容 OpenAI 接口的推理服务。可先运行 `emem-bench evaluate --mode emem --model MODEL_ALIAS --base-url http://localhost:8000/v1 --data-root /path/to/data --manifest /path/to/data/manifests/full2554.jsonl --per-family 1 --output outputs/emem-smoke`。
+
+**许可证**: 基准子目录代码为 Apache-2.0，数据集为 CC BY-NC 4.0；仿真资产遵循各自上游条款。
+
 ## 能力分类体系
 
 基于 [Embodied Arena](https://arxiv.org/abs/2509.15273)，具身能力分为 7 个核心能力，包含 25 个细粒度维度：
